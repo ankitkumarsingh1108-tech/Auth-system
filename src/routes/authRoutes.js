@@ -10,10 +10,10 @@ const authMiddleware = require("../middleware/authMiddleware");
 router.post("/register", register);
 router.post("/login", login);
 
-// 🔐 ADD THIS PART (NEW)
+
 router.get("/profile", authMiddleware, (req, res) => {
   res.json({
-    message: "Welcome to protected route 🔐",
+    message: "Welcome to protected route ",
     user: req.user,
   });
 });
